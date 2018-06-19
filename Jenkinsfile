@@ -3,22 +3,24 @@ pipeline {
   stages {
     stage('Dev') {
       steps {
-        echo 'dev'
+        echo 'lint'
+        echo 'build'
+        echo 'unit test'
       }
     }
     stage('Test') {
       steps {
-        echo 'test'
+        echo 'deploy to test'
       }
     }
     stage('Staging') {
       steps {
-        echo 'staging'
+        echo 'deploy to staging'
       }
     }
     stage('Prod') {
       steps {
-        echo 'prod'
+        echo 'deploy to prod'
       }
     }
   }
