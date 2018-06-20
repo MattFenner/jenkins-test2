@@ -4,7 +4,7 @@ pipeline {
     stage('Dev') {
       steps {
         echo 'lint'
-        powershell 'build.ps1'
+        powershell './build.ps1'
         echo 'unit test'
       }
     }
