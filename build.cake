@@ -23,7 +23,7 @@ Task("Clean")
     CleanDirectory(buildDir);
 });
 
-Task("Do-Something")
+Task("Do-Somethin")
     .IsDependentOn("Clean");
 //     .Does(() =>
 // {
@@ -37,7 +37,7 @@ Task("Do-Something")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-    .IsDependentOn("Do-Something");
+    .IsDependentOn("Do-Somethin");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
