@@ -8,21 +8,21 @@ pipeline {
         echo 'unit test'
       }
     }
+    input(message: 'Deploy to the Test environment?')
     stage('Test') {
       steps {
-        input(message: 'Deploy to the Test environment?')
         echo 'deploy to test'
       }
     }
+    input(message: 'Deploy to the Staging environment?')
     stage('Staging') {
       steps {
-        input(message: 'Deploy to the Staging environment?')
         echo 'deploy to staging'
       }
     }
+    input(message: 'Deploy to the Prod environment?')
     stage('Prod') {
       steps {
-        input(message: 'Deploy to the Prod environment?')
         echo 'deploy to prod'
       }
     }
