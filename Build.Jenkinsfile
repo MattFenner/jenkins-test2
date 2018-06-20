@@ -12,7 +12,8 @@ pipeline {
     stage('trigger test job') {
       agent none
       steps {
-        build(job: './SG Test')
+        echo JOB_NAME
+        build(job: './SG Test/master')
       }
     }
     // stage('input') {
