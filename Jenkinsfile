@@ -1,6 +1,5 @@
 pipeline {
-  // agent { label 'windows' }
-  agent any
+  agent { label 'windows' }
   stages {
     stage('Dev') {
       steps {
