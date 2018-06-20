@@ -9,7 +9,12 @@ pipeline {
         echo 'unit test'
       }
     }
-    build 'SG Test'
+    stage('input') {
+      agent none
+      steps {
+        build(job: 'SG Test')
+      }
+    }
     // stage('input') {
     //   agent none
     //   steps {
