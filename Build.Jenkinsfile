@@ -9,10 +9,10 @@ pipeline {
         echo 'unit test'
       }
     }
-    stage('input') {
+    stage('trigger test job') {
       agent none
       steps {
-        build(job: 'SG Test')
+        build(job: './SG Test')
       }
     }
     // stage('input') {
