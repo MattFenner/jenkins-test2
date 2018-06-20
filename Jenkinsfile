@@ -1,30 +1,26 @@
 pipeline {
-  agent { label 'windows' }
+  agent none
   stages {
     stage('Dev') {
+      agent { label 'windows' }
       steps {
         echo 'lint'
         powershell './build.ps1'
         echo 'unit test'
       }
     }
-    input(message: 'Deploy to the Test environment?')
+    stage('input') {
+      agent none
+      steps {
+        input(message: 'Deploy to the Test environment?')
+      }
+    }
     stage('Test') {
+      agent { label 'windows' }
       steps {
         echo 'deploy to test'
       }
     }
-    input(message: 'Deploy to the Staging environment?')
-    stage('Staging') {
-      steps {
-        echo 'deploy to staging'
-      }
-    }
-    input(message: 'Deploy to the Prod environment?')
-    stage('Prod') {
-      steps {
-        echo 'deploy to prod'
-      }
     }
   }
 }
